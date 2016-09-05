@@ -37,6 +37,9 @@ func main() {
 
 	fmt.Printf("Will show:\n%s\nListening on: %s:%s\n", getData(), addr, port)
 
+	http.HandleFunc("/stop", func(w http.ResponseWriter, r *http.Request) {
+		os.Exit(0)
+	})
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(getData()))
 	})
