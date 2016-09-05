@@ -1,0 +1,5 @@
+FROM scratch
+ADD myapp /
+EXPOSE 80
+ENV APP_VER=2.0
+ENTRYPOINT [ "/myapp" ]

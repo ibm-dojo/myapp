@@ -11,7 +11,11 @@ import (
 
 func getData() string {
 	name, _ := os.Hostname()
-	result := fmt.Sprintf("<pre><b>Host: %s  Date: %s</b>\n", name, time.Now())
+	version := "1.0"
+	if os.Getenv("APP_VER") != "" {
+		version = os.Getenv("APP_VER")
+	}
+	result := fmt.Sprintf("<pre><b>v:%s Host: %s  Date: %s</b>\n", version, name, time.Now())
 	addrs, _ := net.InterfaceAddrs()
 	for _, addr := range addrs {
 		str := addr.String()
