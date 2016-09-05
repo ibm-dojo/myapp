@@ -1,3 +1,0 @@
-myapp: myapp.go
-	docker run -u 1000:1000 -v $(PWD):/src -w /src golang \
-	  go build -o myapp myapp.go
