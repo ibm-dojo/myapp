@@ -1,3 +1,3 @@
 myapp: myapp.go
 	docker run -v $(PWD):/src -w /src golang \
-	  go build -o myapp myapp.go
+	  go build -tags netgo -installsuffix netgo -o myapp myapp.go
